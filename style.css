@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: antiquewhite;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+h1, h2 {
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+    color: rgb(131, 131, 255);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 25px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 8px 0 rgb(167, 133, 88);
+    border: 0.5px solid black;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10%;
+}
+
+.stat {
+    background-color: rgb(137, 97, 44);
+    border-radius: 25px;
+    color: white;
+    padding: 12px 25px;
+    margin-bottom: 10px;
+    border: 2px solid white;
+    box-shadow: 0 2px 0 antiquewhite;
+    flex-shrink: 1;
+}
+
+.stats-label {
+    font-size: 0.8em;
+    margin-bottom: 3px;
+}
+
+.stats-value {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.playGround {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+    perspective: 1000px;
+}
+
+.card {
+    background: transparent;
+    aspect-ratio: 1;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.375s ease-in-out;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card.flipped:hover {
+    transform: rotateY(180deg) scale(1.05);
+}
+
+.front-face, .back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    backface-visibility: hidden;
+    border-radius: 20px;
+}
+
+.back-face {
+    background-color: white;
+    border: 4px solid cyan;
+    box-shadow: 0 3px 0 rgb(137, 95, 40);
+}
+
+.back-face svg {
+    width: 50%;
+    height: 50%;
+}
+
+.front-face {
+    background: white;
+    border: 4px solid cyan;
+    box-shadow: 0 3px 0 rgb(137, 95, 40);
+    transform: rotateY(180deg);
+    overflow: hidden;
+}
+
+.front-face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.controls {
+    text-align: center;
+}
+
+.button {
+    background: rgb(0, 211, 211);
+    border: 4px solid white;
+    color: white;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    font-family: 'Quicksand', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 3px 0 rgb(35, 100, 100);
+    transition: all 0.275s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 0 rgb(35, 100, 100);
+}
+
+.button:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 rgb(35, 100, 100);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 0 rgb(255, 186, 58);
+    background: white;
+    border: 3px solid rgb(131, 131, 255);
+    animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.modal-content h2 {
+    font-size: 2em;
+    color: rgb(131, 131, 255);
+    margin-bottom: 16px;
+}
+
+.modal-content p {
+    font-size: 1.2em;
+    color: rgb(255, 186, 58);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 480px) {
+    .playGround {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 7px;
+    }
+    
+    h1 {
+        font-size: 1.4em;
+    }
+    
+    .front-face {
+        font-size: 2em;
+    }
+}
