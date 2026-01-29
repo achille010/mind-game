@@ -141,7 +141,7 @@ Built as a fun project to practice vanilla JavaScript and create an entertaining
 
 <div align="center">
 
-Made with ❤️ using JavaScript
+Made with </> using JavaScript
 
 **[Play the Game →](https://og-meme-memory.vercel.app/)**
 
