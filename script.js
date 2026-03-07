@@ -16,7 +16,12 @@ const allImages = [
     "messi.png",           // Image 15 - Messi edit
     "rizz.png",            // Image 16 - Side profile
     "rock.png",            // Image 17 - The Rock eyebrow
-    "Hehe-Boi-meme-7 (2).png"  // Image 18 - Hehe boi
+    "Hehe-Boi-meme-7 (2).png",  // Image 18 - Hehe boi
+    "covered_eyes.jpg",    // Image 19 - Eyes covered
+    "loading.jpg",         // Image 20
+    "ngga_dawg.jpg",       // Image 21
+    "sitting_tiger.jpg",    // Image 22
+    "eww.jpg"              // Image 23
 ];
 
 // Function to pick 8 random images from the pool
